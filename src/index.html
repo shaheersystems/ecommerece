@@ -262,24 +262,83 @@
     </nav>
     <section>
       <div
-        class="max-w-7xl md:justify-between m-auto py-4 flex items-center flex-wrap justify-start gap-3"
+        class="px-4 md:px-0 max-w-7xl md:justify-between m-auto py-4 flex items-center flex-wrap justify-start gap-3"
       >
-        <div></div>
+        <div class="flex-1">
+          <div class="mx-auto max-w-xl py-10">
+            <div class="flex items-center gap-4">
+              <div class="rounded-full border px-3 py-1 text-xs font-semibold">
+                $ 25
+              </div>
+              <div class="relative w-72 py-2">
+                <div>
+                  <input
+                    type="range"
+                    step="100"
+                    class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0"
+                  />
+
+                  <input
+                    type="range"
+                    step="100"
+                    class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0"
+                  />
+
+                  <div class="relative z-10 h-[2px]">
+                    <div
+                      class="absolute bottom-0 left-0 right-0 top-0 z-10 rounded-md bg-black"
+                    ></div>
+
+                    <div
+                      class="bg-green-black absolute bottom-0 top-0 z-20 rounded-md"
+                    ></div>
+
+                    <div
+                      class="absolute left-10 top-0 z-30 -mt-2.5 h-6 w-6 rounded-full border-2 border-black bg-white"
+                    ></div>
+
+                    <div
+                      class="absolute right-10 top-0 z-30 -mt-2.5 h-6 w-6 rounded-full border-2 border-black bg-white"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-full border px-3 py-1 text-xs font-semibold">
+                $ 1500
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="flex items-center gap-2">
-          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
-            >Resturant</span
+          <a href="/">
+            <span
+              class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+              >Resturant</span
+            >
+          </a>
+          <a href="/">
+            <span
+              class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+              >SPA</span
+            >
+          </a>
+          <a href="/">
+            <span
+              class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+              >Fitness center</span
+            >
+          </a>
+          <a href="/">
+            <span
+              class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+              >Parking</span
+            ></a
           >
-          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
-            >SPA</span
-          >
-          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
-            >Fitness center</span
-          >
-          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
-            >Parking</span
-          >
-          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
-            >Beachfront</span
+          <a href="/">
+            <span
+              class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+              >Beachfront</span
+            ></a
           >
         </div>
         <div class="flex items-center gap-3 flex-wrap">
@@ -328,7 +387,7 @@
       </div>
     </section>
     <section
-      class="px-3 md:px-0 max-w-7xl m-auto flex md:flex-row flex-col flex-wrap py-4"
+      class="px-3 md:px-0 max-w-7xl m-auto flex md:flex-row flex-col-reverse py-4"
     >
       <div class="flex-1">
         <div
@@ -901,13 +960,18 @@
           </div>
         </div>
       </div>
-      <div
-        class="flex-1 md:sticky static top-10 bottom-10 rounded bg-black h-[95vh]"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-        doloribus culpa, iusto alias explicabo similique mollitia deleniti porro
-        sunt inventore aliquam sint cum rem eius consequuntur, impedit, deserunt
-        quo vero.
+      <div class="flex-1 md:sticky static top-10 bottom-10 rounded h-[95vh]">
+        <iframe
+          width="100%"
+          height="100%"
+          style="border: 0"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=Space+Needle,Seattle+WA"
+        >
+        </iframe>
       </div>
     </section>
   </body>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="bg-gray-100">
+      <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between">
+          <div class="flex">
+            <div class="-ml-2 mr-2 flex items-center md:hidden">
+              <!-- Mobile menu button -->
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <!--
+              Icon when menu is closed.
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+                <svg
+                  class="block h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <!--
+              Icon when menu is open.
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+                <svg
+                  class="hidden h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-shrink-0 items-center">
+              <img
+                class="block h-8 w-auto lg:hidden"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt="Your Company"
+              />
+              <img
+                class="hidden h-8 w-auto lg:block"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt="Your Company"
+              />
+            </div>
+          </div>
+          <div class="flex-1 flex items-center px-4 mx-4">
+            <div class="flex items-center bg-gray-100 w-full text-gray-600">
+              <div class="h-5 w-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search for city, hotel and apartments... "
+                class="bg-gray-100 border-none w-full text-gray-600 px-2 leading-8 focus:outline-none"
+              />
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <button
+                type="button"
+                class="relative inline-flex items-center gap-x-1.5 rounded-md bg-neutral-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-neutral-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                I'm a host
+              </button>
+            </div>
+            <div
+              class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center"
+            >
+              <button
+                type="button"
+                class="rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2"
+              >
+                <span class="sr-only">View notifications</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                  />
+                </svg>
+              </button>
+
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div class="flex items-center gap-3">
+                  <button
+                    type="button"
+                    class="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-neutral-800 focus:ring-offset-2"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                    />
+                  </button>
+                </div>
+
+                <!--
+              Dropdown menu, show/hide based on menu state.
+
+              Entering: "transition ease-out duration-200"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+                <div
+                  class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Your Profile</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-1"
+                    >Settings</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="space-y-1 pb-3 pt-2"></div>
+        <div class="border-t border-gray-200 pb-3 pt-4">
+          <div class="flex items-center px-4 sm:px-6">
+            <div class="flex-shrink-0">
+              <img
+                class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              />
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium text-gray-800">Tom Cook</div>
+              <div class="text-sm font-medium text-gray-500">
+                tom@example.com
+              </div>
+            </div>
+            <button
+              type="button"
+              class="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              <span class="sr-only">View notifications</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-3 space-y-1">
+            <a
+              href="#"
+              class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+              >Your Profile</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+              >Settings</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
+              >Sign out</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div
+        class="max-w-7xl md:justify-between m-auto py-4 flex items-center flex-wrap justify-start gap-3"
+      >
+        <div></div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+            >Resturant</span
+          >
+          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+            >SPA</span
+          >
+          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+            >Fitness center</span
+          >
+          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+            >Parking</span
+          >
+          <span class="px-3 py-1 bg-gray-200 rounded-full font-semibold text-sm"
+            >Beachfront</span
+          >
+        </div>
+        <div class="flex items-center gap-3 flex-wrap">
+          <button
+            class="px-3 py-1 flex gap-2 items-center border-2 rounded-full border-gray-300 hover:bg-gray-100 font-semibold text-sm"
+          >
+            <span class="w-5 h-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="{1.5}"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                /></svg
+            ></span>
+            Sort
+          </button>
+          <button
+            class="px-3 py-1 flex gap-2 items-center border-2 rounded-full border-gray-300 hover:bg-gray-100 font-semibold text-sm"
+          >
+            <span class="w-5 h-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="{1.5}"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+                />
+              </svg>
+            </span>
+            All filters
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="px-3 md:px-0 max-w-7xl m-auto flex md:flex-row flex-col flex-wrap py-4"
+    >
+      <div class="flex-1">
+        <div
+          class="flex flex-wrap gap-6 items-center justify-center md:justify-start"
+        >
+          <div class="relative border rounded-lg">
+            <div class="relative">
+              <div
+                class="relative h-56 object-cover px-8 overflow-hidden rounded-lg"
+              >
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="py-4 px-4 flex items-center justify-between">
+                <div>
+                  <h1 class="text-xl font-bold">Apartments in Frejus</h1>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-yellow-400"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+              </div>
+              <div class="flex px-4 items-center gap-1 text-sm text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span>Frejus, France</span>
+              </div>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between">
+              <div class="text-sm font-semibold">
+                <span>2 beds</span> • <span>48 m³</span> •
+                <span>4 guests</span>
+              </div>
+              <div>
+                <h2 class="">from <span class="font-black">$75</span></h2>
+              </div>
+            </div>
+
+            <div
+              class="px-4 py-4 absolute top-1 w-full flex items-center justify-between"
+            >
+              <span class="text-xs font-semibold px-3 py-1 bg-green-100 rounded"
+                >2 left</span
+              >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="relative border rounded-lg">
+            <div class="relative">
+              <div
+                class="relative h-56 object-cover px-8 overflow-hidden rounded-lg"
+              >
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="py-4 px-4 flex items-center justify-between">
+                <div>
+                  <h1 class="text-xl font-bold">Apartments in Frejus</h1>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-yellow-400"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+              </div>
+              <div class="flex px-4 items-center gap-1 text-sm text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span>Frejus, France</span>
+              </div>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between">
+              <div class="text-sm font-semibold">
+                <span>2 beds</span> • <span>48 m³</span> •
+                <span>4 guests</span>
+              </div>
+              <div>
+                <h2 class="">from <span class="font-black">$75</span></h2>
+              </div>
+            </div>
+
+            <div
+              class="px-4 py-4 absolute top-1 w-full flex items-center justify-between"
+            >
+              <span class="text-xs font-semibold px-3 py-1 bg-green-100 rounded"
+                >2 left</span
+              >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="relative border rounded-lg">
+            <div class="relative">
+              <div
+                class="relative h-56 object-cover px-8 overflow-hidden rounded-lg"
+              >
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="py-4 px-4 flex items-center justify-between">
+                <div>
+                  <h1 class="text-xl font-bold">Apartments in Frejus</h1>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-yellow-400"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+              </div>
+              <div class="flex px-4 items-center gap-1 text-sm text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span>Frejus, France</span>
+              </div>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between">
+              <div class="text-sm font-semibold">
+                <span>2 beds</span> • <span>48 m³</span> •
+                <span>4 guests</span>
+              </div>
+              <div>
+                <h2 class="">from <span class="font-black">$75</span></h2>
+              </div>
+            </div>
+
+            <div
+              class="px-4 py-4 absolute top-1 w-full flex items-center justify-between"
+            >
+              <span class="text-xs font-semibold px-3 py-1 bg-green-100 rounded"
+                >2 left</span
+              >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="relative border rounded-lg">
+            <div class="relative">
+              <div
+                class="relative h-56 object-cover px-8 overflow-hidden rounded-lg"
+              >
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="py-4 px-4 flex items-center justify-between">
+                <div>
+                  <h1 class="text-xl font-bold">Apartments in Frejus</h1>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-yellow-400"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+              </div>
+              <div class="flex px-4 items-center gap-1 text-sm text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span>Frejus, France</span>
+              </div>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between">
+              <div class="text-sm font-semibold">
+                <span>2 beds</span> • <span>48 m³</span> •
+                <span>4 guests</span>
+              </div>
+              <div>
+                <h2 class="">from <span class="font-black">$75</span></h2>
+              </div>
+            </div>
+
+            <div
+              class="px-4 py-4 absolute top-1 w-full flex items-center justify-between"
+            >
+              <span class="text-xs font-semibold px-3 py-1 bg-green-100 rounded"
+                >2 left</span
+              >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="relative border rounded-lg">
+            <div class="relative">
+              <div
+                class="relative h-56 object-cover px-8 overflow-hidden rounded-lg"
+              >
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                  alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="py-4 px-4 flex items-center justify-between">
+                <div>
+                  <h1 class="text-xl font-bold">Apartments in Frejus</h1>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-yellow-400"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+              </div>
+              <div class="flex px-4 items-center gap-1 text-sm text-gray-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span>Frejus, France</span>
+              </div>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between">
+              <div class="text-sm font-semibold">
+                <span>2 beds</span> • <span>48 m³</span> •
+                <span>4 guests</span>
+              </div>
+              <div>
+                <h2 class="">from <span class="font-black">$75</span></h2>
+              </div>
+            </div>
+
+            <div
+              class="px-4 py-4 absolute top-1 w-full flex items-center justify-between"
+            >
+              <span class="text-xs font-semibold px-3 py-1 bg-green-100 rounded"
+                >2 left</span
+              >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="{1.5}"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sticky top-[100%] bottom-0 flex items-center justify-between border-gray-200 bg-white py-3 sm:px-4"
+        >
+          <div
+            class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between"
+          >
+            <div>
+              <nav
+                class="isolate inline-flex -space-x-px rounded-md"
+                aria-label="Pagination"
+              >
+                <a
+                  href="#"
+                  class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                >
+                  <span class="sr-only">Previous</span>
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                <a
+                  href="#"
+                  aria-current="page"
+                  class="relative z-10 inline-flex items-center bg-neutral-900 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >1</a
+                >
+                <a
+                  href="#"
+                  class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                  >2</a
+                >
+                <a
+                  href="#"
+                  class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                  >3</a
+                >
+                <span
+                  class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 focus:outline-offset-0"
+                  >...</span
+                >
+                <a
+                  href="#"
+                  class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                  >8</a
+                >
+                <a
+                  href="#"
+                  class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                  >9</a
+                >
+                <a
+                  href="#"
+                  class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                  >10</a
+                >
+                <a
+                  href="#"
+                  class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                >
+                  <span class="sr-only">Next</span>
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </nav>
+            </div>
+            <div>
+              <p class="text-sm text-gray-700">
+                Showing
+                <span class="font-medium">1</span>
+                to
+                <span class="font-medium">10</span>
+                of
+                <span class="font-medium">97</span>
+                results
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-between sm:hidden">
+            <a
+              href="#"
+              class="relative inline-flex items-center rounded-md border border-gray-300 bg-white py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              >Previous</a
+            >
+            <a
+              href="#"
+              class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              >Next</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex-1 md:sticky static top-10 bottom-10 rounded bg-black h-[95vh]"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+        doloribus culpa, iusto alias explicabo similique mollitia deleniti porro
+        sunt inventore aliquam sint cum rem eius consequuntur, impedit, deserunt
+        quo vero.
+      </div>
+    </section>
+  </body>
+</html>
